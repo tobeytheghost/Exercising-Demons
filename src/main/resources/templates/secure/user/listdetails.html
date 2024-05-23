@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Details </title>
+    <link rel="Stylesheet" href="/css/main.css" >
+</head>
+
+
+<body>
+
+	<header th:insert="fragments/guest-nav.html :: nav"></header>
+
+
+ 	<div th:object="${myWorkoutList}">
+		<h1><span th:text="*{listName}"></span></h1>
+	</div>
+
+
+	<table>
+		<tr>
+			<th>Workout Name</th>
+			<th>Description</th>
+			<th>Sets</th>
+			<th>Reps</th>
+            <th>Weight</th>
+		</tr>
+		<tr th:each="w : ${workoutList}">
+			<td th:text="${w.name}"></td>
+			<td th:text="${w.description}"></td>
+			<td>
+				<form th:action="@{/secure/user/listdetails/updateList}" method="post">
+					<input type="hidden" name="id" th:value="${w.id}" />
+					<input type="number" name="quantity"min="1" />
+                </form>
+			</td>
+            <td>
+				<form th:action="@{/secure/user/listdetails/updateList}" method="post">
+					<input type="hidden" name="id" th:value="${w.id}" />
+					<input type="number" name="quantity"min="1" />
+                </form>
+			</td>
+            <td>
+				<form th:action="@{/secure/user/listdetails/updateList}" method="post">
+					<input type="hidden" name="id" th:value="${w.id}" />
+					<input type="number" name="quantity"min="0" />
+                </form>
+			</td>
+		
+		</tr>
+	</table>
+
+
+
+	</body>
+	
+</html>

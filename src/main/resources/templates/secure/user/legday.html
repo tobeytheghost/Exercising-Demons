@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Leg Day </title>
+    <link rel="Stylesheet" href="/css/main.css" >
+</head>
+
+
+<body>
+
+	<header th:insert="fragments/guest-nav.html :: nav"></header>
+
+
+
+		<h1><span >Leg Day</span></h1>
+
+
+
+        <table>
+            <tr>
+                <th>Workout Name</th>
+                <th>Description</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Weight</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Quad Extension</td>
+                <td>Performed with a lever machine, where you sit on a padded seat and raise a padded bar with your legs.</td>
+                <td>
+              <input type="number" name="quantity" min="1" />
+                </td>
+                <td>
+                    <input type="number" name="quantity" min="1">
+                </td>
+                <td>
+                    <input type="number" name="quantity" min="0">
+                </td>
+                <td>
+                    <input type="checkbox" name="status">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Leg Press</td>
+                <td>Using a leg press machine, push the platform away from your body by extending your knees. This targets the quadriceps, hamstrings, and glutes.</td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="0" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="checkbox" name="status" />
+                    </form>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Hamstring Curl</td>
+                <td>Using a machine, curl your legs towards your buttocks, targeting the hamstrings.</td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="0" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="checkbox" name="status" />
+                    </form>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Calf Raises</td>
+                <td>Stand on a raised surface and lift your heels by pushing through the balls of your feet. This targets the calf muscles.</td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="0" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="checkbox" name="status" />
+                    </form>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Walking Lunges</td>
+                <td>Take steps forward, lowering your hips toward the floor. This exercise targets the quadriceps, hamstrings, and glutes.</td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="1" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="number" name="quantity" min="0" />
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <input type="checkbox" name="status" />
+                    </form>
+                </td>
+            </tr>
+        </table>
+        
+
+
+
+	</body>
+	
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charsest="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Calories Calculator </title>
+    <link rel="Stylesheet" href="/css/main.css" >
+</head>
+
+<body>
+    <!-- Header Fragment with Navigation NEEDS TO BE STYLED -->
+<header th:insert="fragments/guest-nav.html :: nav"></header>
+
+    <section class="activity">
+        <h1>Calories Burned</h1>
+        <h3> This is a list of activities and you can view the calories burned </h3>
+        <script src="../../static/js/api.js" th:src="@{/js/api.js}"></script>
+        <div class="activity-list">
+            <h3 th:each="act : ${activityList}">
+                <a href="#" th:onclick="'getActivity('+ ${act.id} + ')'" th:text="${act.activityName}"></a>
+                <div th:id="'activity' + ${act.id}"></div>
+            </h3>
+        </div>
+
+    </section>
+    
+ 
+</body>
+
+</html>
+ </form>

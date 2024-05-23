@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Details </title>
+    <link rel="Stylesheet" href="/css/main.css" >
+    <style>
+
+
+    h1 {
+        text-align: center;
+    }
+    
+    .admin-arms {
+        margin-left: 350px;
+        max-width: 800px; /* Adjust the maximum width of the container */
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff; /* Change this to your desired background color */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      
+      
+    }
+    
+    table {
+    
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px; /* Adjust the margin between the h1 and the table */
+    
+    }
+    
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #f2f2f2; /* Change this to your desired header background color */
+    }
+    
+    tr:hover {
+        background-color: #f5f5f5; /* Change this to your desired row hover background color */
+    }
+    
+    form {
+        margin-top: 20px; /* Adjust the margin between the table and the form */
+        text-align: center;
+    }
+    
+    form label {
+        display: block;
+        margin: 10px 0; /* Adjust the margin between form labels */
+    }
+    
+    form input, form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    form input[type="submit"] {
+        background-color: #3498db;
+        color: #ffffff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    form input[type="submit"]:hover {
+        background-color: #2b88c5; /* Change this to your desired hover color */
+    }
+    </style>
+</head>
+
+<body>
+
+	<header th:insert="fragments/admin-nav.html :: nav"></header> 
+	<h1>Arm Workouts</h1>
+
+<div class="admin-arms">
+<table th:if="${workoutList != null AND workoutList != ''}">
+
+<tr>
+	<th>Workout Name</th>
+	<th>Description</th>
+	<th>Target Muscles</th>
+	<th>How To </th>
+	<th>Actions</th>
+</tr>
+
+
+<tr th:each="w : ${workoutList}">
+<td th:text="${w.name}">Bench Press </td>
+<td th:text="${w.description}">Bench Press</td>
+<td th:text="${w.targetMuscles}">Chest </td>
+<td><video autoplay th:src="@{${w.imageUrl}}" alt="Book Image"></a></td>
+
+<td> <a th:href="@{/secure/admin/arms/editArmsWorkoutById/}+${w.id}">Edit</a></td>
+
+<td> <a th:href="@{/secure/admin/arms/deleteArmWorkoutById/}+${w.id}">Delete</a></td>
+</tr>
+</table>
+
+
+<br><hr><br>
+
+<form method="post" action="#" th:action="@{/secure/admin/arms/insertArmWorkout}" th:object="${workout}">
+
+
+<input type="hidden" name="id" th:field="*{id}"> 
+
+<label> Workout Name: </label>
+<input type="test" name="name" th:field="*{name}"> 
+<br>
+
+<label>Description: </label>
+<textarea th:field="*{description}" name="description" id="description"></textarea>
+<br>
+
+<label>Target Muscles: </label>
+<input type="text" name="targetMuscles" th:field="*{targetMuscles}"> 
+<br>
+
+<label> Image Url: </label>
+<input type="text" name="imageUrl" th:field="*{imageUrl}"> 
+<br>
+
+<input type="submit" value="GO!">
+</form>
+</div>
+</body>
+	
+</html>

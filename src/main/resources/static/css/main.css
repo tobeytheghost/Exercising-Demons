@@ -1,0 +1,218 @@
+/* Add this CSS to your existing styles */
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     scroll-padding-top: 1rem;
+     scroll-behavior: smooth;
+     list-style: none;
+     text-decoration: none;
+     font-family: 'Poppins', sans-serif;
+ }
+ 
+  :root {
+     --text-color: #444;
+ }
+ 
+ body {
+
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Change this to your desired background color */
+    margin: 0; /* Remove default margin */
+}
+
+#system-name{
+	display: flex;
+	justify-content: space-between; /* To have the logo on the left and options on the right */
+    align-items: right;
+    
+}
+ #system-logo {
+        margin-bottom: 1rem;
+    }
+/* Sticky Navigation Bar */
+nav {
+    justify-content: space-between; /* To have the logo on the left and options on the right */
+    align-items: center;
+    height: 10vh; /* Adjust height as needed */
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #8F96A6;
+    padding: 0 2rem; /* Add padding to create space around the logo and options */
+    z-index: 1000; /* Set a high z-index to keep the nav on top of other elements */
+}
+
+
+/* Navigation Options Styling */
+ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+li {
+    font-weight: 500;
+}
+
+a {
+    color: #011826;
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: #D0E9F2;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: #D0E9F2;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Video Styling */
+video {
+    max-width: 100%; /* Make sure the video doesn't overflow its container */
+}
+
+/* Home Section Styling */
+
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(/images/indexphoto.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+     background-size: cover;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 0;
+    padding-right: 7rem;
+    padding-left: 7rem;
+}
+
+.text {
+     max-width: 600px; /* Adjust the maximum width of the box */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px; /* Add padding to the box */
+    background-color: #ffffff; /* Box background color */
+    border-radius: 8px; /* Add rounded corners to the box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.image {
+    text-align: right; /* Align the image to the right */
+}
+.login-body, .reg-body{
+				display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Change this to your desired background color */
+            margin: 0; /* Remove default margin */
+}
+        .login-container, .reg-container {
+
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       .login-heading, .reg-heading {
+            text-align: center;
+        }
+
+        .login-form, .reg-form {
+            margin-top: 20px;
+        }
+
+        .login-form label, .reg-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .login-form input, .reg-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-form button, .reg-form button{
+            width: 100%;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover,  .reg-form button:hover {
+            background-color: #2b88c5; /* Change this to your desired hover color */
+        }
+
+        .error, .success {
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: #a94442;
+        }
+
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        
+        
+/*Styling for the ADMIN PAGES */
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    #system-logo {
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        gap: 1rem;
+    }
+
+    .home {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        text-align: center;
+    }
+
+    .text {
+        max-width: none;
+    }
+
+    .image {
+        text-align: center; /* Center the image on smaller screens */
+    }
+}

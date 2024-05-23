@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - My Workouts</title>
+    <link rel="Stylesheet" href="/css/main.css">
+    <style>
+
+
+.list {
+    max-width: 800px;
+    width: 80%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-left: 350px;
+    text-align: center;
+}
+
+.list h1 {
+    margin-bottom: 20px;
+   text-align: center;
+}
+
+.list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.list th, .list td {
+    padding: 8px;
+    text-align: center;
+}
+
+.list a {
+    text-decoration: none;
+    color: #359bbf;
+}
+
+.list a:hover {
+    text-decoration: underline;
+}
+
+.newList {
+    background-color: #359bbf;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+.newList:hover {
+    opacity: 1;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #359bbf;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+.form-container .cancel {
+    background-color: red;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+        </style>
+</head>
+
+
+<body>
+
+    <header th:insert="fragments/guest-nav.html :: nav"></header>
+
+
+
+    <section class="list" id="list">
+		 <h1> My Workout List </h1>
+		<p><a th:href="@{/secure/user/legday}">Leg Day</a></p>
+
+        <table th:if="${myWorkoutList != null AND myWorkoutList != ''}">
+
+            <tr th:each="l : ${myWorkoutList}">
+                <td><a th:href="@{/secure/user/listdetails/} + ${l.id}"  th:text="${l.listName}"></a></td>
+            </tr>
+        </table>
+
+        
+
+        <button class="newList" onclick="openListForm()"> Create New List</button>
+
+        <div class="form-popup" id="listForm">
+            <form method="post" action="#" th:action="@{/secure/user/list/createNewList}" class="form-container" th:object="${lists}">
+                <h1>Create New List</h1>
+            
+                <label><b>List Name</b></label>
+                <input type="text" placeholder="Enter List Name" name="listName" th:field="*{listName}">
+            
+                <button type="submit"  onclick="createList()" class="btn">Create</button>
+              </form>
+            </div>
+            
+            <script>
+            function openListForm() {
+              document.getElementById("listForm").style.display = "block";
+            }
+            
+            function createList() {
+              document.getElementById("listForm").style.display = "none";
+            }
+            </script>
+            
+        </div>
+
+
+        
+    </section>
+
+
+
+</body>
+
+</html>

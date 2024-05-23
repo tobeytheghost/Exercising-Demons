@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Sign In</title>
+    <link rel="Stylesheet" href="/css/main.css" >
+
+</head>
+
+
+<body>
+
+	<header th:insert="fragments/nav.html :: nav"></header>
+	<div class="login-body">
+	<div class="login-container">
+<h1 class="login-heading">Sign In Page</h1>
+
+
+
+<div class="login-form">
+<form method="post" th:action="@{/login}">
+<div th:if="${param.error}">
+ <div class="error">
+ Invalid credentials
+ </div>
+</div>
+
+
+<div th:if="${param.logout}">
+ <div class="success">
+ You have been logged out
+ </div>
+</div>
+
+
+Username: <input type="username" name="username" /><br>
+Password: <input type="password" name="password" /><br>
+
+<input type="submit" value="Log In" name="login-submit" />
+
+</form>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="Stylesheet" href="/static/css/main.css" >
+        
+    </head>
+
+<body>
+
+    <div th:fragment="header">
+          <nav>
+		<h2 id="system-name" >Exercising Demons</span></h2> 
+			  <img id="system-logo" height="95px" src="/static/images/logo.png" th:src="@{/static/images/logo.png}" />
+        <ul>
+    
+            <li><a th:href="@{/secure/user/index}">Home</a></li>
+             <li><a th:href="@{/secure/user/browse}">Browse</a></li>
+            <li><a th:href="@{/secure/user/list}">My Workouts</a></li>
+            <li><a th:href="@{/secure/user/activities}">Calorie Calculator</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+        </ul>
+    </nav>
+    </div>
+    
+
+</body>
+
+
+
+</html>
+
+
