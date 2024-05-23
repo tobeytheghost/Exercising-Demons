@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="Stylesheet" href="/static/css/main.css" >
+        
+    </head>
+
+<body>
+
+    <div th:fragment="header">
+      
+       
+         <nav>
+			  <h2 id="system-name" >Exercising Demons</span></h2> 
+			  <img id="system-logo" height="95px" src="/static/images/logo.png" th:src="@{/static/images/logo.png}" />
+        <ul>
+    
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a class = "sign-in" th:href="@{/login}">Sign In</a></li>
+            <li><a  class = "sign-up" th:href="@{/register}">Sign Up</a></li>
+        </ul>
+    </nav>
+    </div>
+    
+  
+</body>
+
+
+
+</html>
+
+

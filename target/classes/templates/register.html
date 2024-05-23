@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Sign Up</title>
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+    <link rel="Stylesheet" href="/css/main.css" >
+</head>
+<body>
+	
+		<header th:insert="fragments/nav.html :: nav"></header>
+<div class="reg-body">
+    <div class="reg-container">
+<h1 class="reg-heading"> Sign Up Here! </h1>
+
+<div class="reg-form">
+<div id="error" class="error"></div>
+<form name="form" action="#" th:action="@{/register}" method="post" onsubmit="return verify()">
+Username: <input type="username" name="username" /><br>
+Password: <input type="password" name="password" /><br>
+Verify Password: <input type="password" name="verifyPassword" /><br>
+<input type="submit" value="Register">
+</form>
+</div>
+    </div>
+</div>
+ 
+</body>
+</html>

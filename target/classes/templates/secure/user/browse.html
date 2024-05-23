@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons</title>
+    <link rel="Stylesheet" href="/css/main.css" >
+        <style>
+
+
+    .browse-header {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .browse {
+			margin-left: 350px;
+            text-align: center;
+            max-width: 800px; /* Adjust the maximum width of the container */
+            width: 100%;
+            padding: 20px;
+        }
+
+        .browse li {
+            list-style: none;
+            margin: 10px 0; /* Adjust the space between links */
+        }
+        .browse a:hover {
+    color: #006d94;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: #006d94;
+}
+
+
+        </style>
+</head>
+
+<!--
+Author:       Mariah Falzon
+Program:      index.html
+Date:         December 2, 2023
+Updated:      
+Versikon:     1.0 (format major.minor updates)
+Purpose:      Java 2023 Assignment 3 - Using Security, Thymeleaf, APIs in Springboot for GUEST ACCOUNTS
+
+-->
+
+<body>
+    <!-- Header Fragment with Navigation NEEDS TO BE STYLED -->
+<header th:insert="fragments/guest-nav.html :: nav"></header>
+
+<h1 class="browse-header"> Browse Categories </h1>
+
+
+    <section class="browse" id="browse">
+	<li> <h3> <a th:href="@{/secure/user/chest}">Chest</a> </h3></li>
+	<li> <h3> <a th:href="@{/secure/user/back}">Back</a> </h3> </li>
+	<li> <h3>  <a th:href="@{/secure/user/legs}">Legs</a> </h3> </li>
+	<li> <h3> <a th:href="@{/secure/user/arms}">Arms</a> </h3> </li>
+    </section>
+    
+    
+
+
+</body>
+
+</html>
+ </form>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercising Demons - Chest Workouts</title>
+    <link rel="Stylesheet" href="/css/main.css" >
+    <style>
+   
+
+.chest {
+	margin-left: 350px;
+    max-width: 800px; /* Adjust the maximum width of the container */
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* Change this to your desired background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Change this to your desired header background color */
+}
+
+tr:hover {
+    background-color: #f5f5f5; /* Change this to your desired row hover background color */
+}
+
+td {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px; /* Adjust the gap between the video and text */
+}
+
+td video {
+    width: 100%; /* Make the video fill its container */
+}
+
+
+        </style>
+</head>
+
+<!--
+Author:       Mariah Falzon
+Program:      index.html
+Date:         December 2, 2023
+Updated:      
+Versikon:     1.0 (format major.minor updates)
+Purpose:      Java 2023 Assignment 3 - Using Security, Thymeleaf, APIs in Springboot for GUEST ACCOUNTS
+
+-->
+
+<body>
+
+<header th:insert="fragments/guest-nav.html :: nav"></header>
+
+    <section class="chest" id="chest">
+
+        <table th:if="${workoutList != null AND workoutList != ''}">
+            
+            <tr th:each="w : ${workoutList}">
+                <td><a th:href="@{/secure/user/details/} + ${w.id}"><video autoplay th:src="@{${w.imageUrl}}" alt="Workout Image" > </a> </td>
+            <td th:text="${w.name}">Bench Press</td>
+           
+            <td th:text="${w.targetMuscles}">Chest , Triceps</td>
+
+            </tr>
+            </table>
+
+
+    </section>
+
+
+</body>
+
+</html>
